@@ -1,0 +1,14 @@
+# System and IDE files
+.DS_Store
+.vscode/
+
+# Package management
+node_modules/
+
+# Build outputs
+coverage/
+dist/
+typedoc/
+
+# Build caches
+.turbo/
