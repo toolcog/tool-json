@@ -1,0 +1,13 @@
+# Config files
+.editorconfig
+.gitignore
+.npmignore
+*.config.js
+tsconfig*.json
+typedoc.json
+
+# Test files
+**/*.test.ts
+
+# Force-include dist/
+!dist/

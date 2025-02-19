@@ -1,0 +1,55 @@
+{
+  "name": "tool-json",
+  "version": "0.1.0",
+  "description": "A library for stack-based JSON resource processing and reference resolution",
+  "author": "Tool Cognition Inc.",
+  "license": "MIT",
+  "homepage": "https://github.com/toolcog/tool-json#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toolcog/tool-json.git"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json && prettier --log-level silent --ignore-path '' --write dist/",
+    "check": "tsc --noEmit",
+    "lint": "eslint",
+    "format": "prettier --write ./",
+    "test": "node --test --conditions=types --experimental-strip-types '**/*.test.ts'",
+    "coverage": "node --test --conditions=types --experimental-strip-types --experimental-test-coverage '**/*.test.ts'",
+    "typedoc": "typedoc --out typedoc/",
+    "size": "size-limit",
+    "clean": "rimraf .turbo dist typedoc",
+    "clean-all": "rimraf .turbo dist typedoc node_modules"
+  },
+  "type": "module",
+  "types": "./src/lib.ts",
+  "main": "./dist/lib.js",
+  "exports": {
+    ".": {
+      "types": "./src/lib.ts",
+      "import": "./dist/lib.js"
+    }
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "tool-uri": "^0.1.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@types/node": "^22.13.0",
+    "eslint": "^9.21.0",
+    "eslint-plugin-jsdoc": "^50.6.0",
+    "prettier": "^3.5.0",
+    "rimraf": "^6.0.0",
+    "typedoc": "^0.27.0",
+    "typescript": "^5.7.0",
+    "typescript-eslint": "^8.25.0"
+  },
+  "size-limit": [
+    {
+      "name": "lib",
+      "path": "dist/lib.js"
+    }
+  ],
+  "packageManager": "pnpm@10.5.2"
+}
